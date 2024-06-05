@@ -377,22 +377,28 @@ thead th:hover {
                             <td>{{ $formulaire->budget }}</td>
                             <td>{{ $formulaire->date }}</td>
                             <td>{{ $formulaire->destination }}</td>
+
                             <td>
-                                
+                                @if($formulaire->is_validated==false)
                                 <form action="{{ route('edit', $formulaire->id) }}" method="get">
                                     @csrf
                                     <button class="btn">Modifier</button>
                                 </form>      
-                               
+                               @else
+                               <form action="{{ route('pdf', $formulaire->id) }}" method="get">
+                                @csrf
+                                <button class="btn">Télécharger</button>
+                            </form>   
+                               @endif
                             </td>
                             <td>
-                               
+                                @if($formulaire->is_validated==false)
                                 <form action="{{ route('drop.request', $formulaire->id) }}" method="post">
                                     @method('delete')
                                     @csrf
                                     <button class="btn">Supprimer</button>
                                 </form>
-                               
+                               @endif
                             </td>
                             @endif
                         </tr>

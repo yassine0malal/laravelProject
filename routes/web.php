@@ -35,7 +35,14 @@ Route::get('/solde', [SoldeController::class, 'index'])->name('solde');
 Route::get('/client/companysolde', [ClientController::class, 'tablesolde'])->name('tablesolde');
 
 //-------------------------------------------------
+
+
+
+
 Route::get('/admin/homeAdmin',[AdminController::class,'homeAdmin'])->name('homeAdmin');
+Route::get('/admin/user',[AdminController::class,'user'])->name('user');
+Route::delete('/admin/user/{profile}', [AdminController::class, 'dropuser'])->name('drop.user');
+
 Route::get('/admin/solde',[AdminController::class,'solde'])->name('solde');
 Route::post('/admin/solde/post',[AdminController::class,'soldePost'])->name('solde.post');
 Route::get('/admin/company', [AdminController::class, 'liste_solde'])->name('companysolde');
@@ -44,8 +51,10 @@ Route::put('/admin/company/{solde}', [AdminController::class, 'update_solde'])->
 Route::get('/admin/request', [AdminController::class, 'demande'])->name('demande');
 Route::get('/admin/logout',[AdminController::class,'logoutadmin'])->name('logoutadmin');
 Route::get('/admin/Voirdemmande{id}',[AdminController::class,'Voirdemmande'])->name('Voirdemmande');
-Route::patch('/admin/Voirdemmande/formule/{id}',[AdminController::class,'valid'])->name('valid');
+Route::patch('/admin/demande/valid/{id}',[AdminController::class,'valid'])->name('valid');
+Route::patch('/admin/demande/refuse/{id}',[AdminController::class,'refuser'])->name('refuser');
+
+Route::get('/admin/arrchive', [AdminController::class, 'arrchive'])->name('arrchive');
 
 
-
-Route::get('/client/request/pdf',[pdfController::class, 'pdf'])->name('pdf');
+Route::get('/client/request/pdf/{id}',[pdfController::class, 'pdf'])->name('pdf');

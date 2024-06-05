@@ -60,7 +60,7 @@ public function loginpost(Request $request)
         }
         return redirect()->route('homeClient');
     } else {
-        return 'Email ou mot de passe incorrect.';
+        return back()->withErrors('Email ou mot de passe incorrecte');
     }
 }
 }

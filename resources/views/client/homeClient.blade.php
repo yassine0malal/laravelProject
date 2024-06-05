@@ -89,7 +89,9 @@
   object-fit: contain;
 }
 
-
+a{
+  text-decoration: none;
+}
 
 
 
@@ -116,8 +118,8 @@
 
           <div class="btn_wrapper">
             
-            <a href="{{route('pdf')}}">
-            <button class="btn documentation_btn">Télécharger </button>
+            <a href="{{route('request')}}">
+            <button class="btn documentation_btn">Votre Demande </button>
           </a>
           </div>
         </div>

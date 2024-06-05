@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
    
     <title>Modern Login Page | AsmrProg</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
@@ -40,9 +43,9 @@ body{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 700px;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 450px;
 }
 
 .container p{
@@ -235,31 +238,34 @@ body{
 }
 .error li {
     list-style: none;
+    font-size: 13px;
 }
 </style>
 
 <body>
+    @if($errors->any())
+    @foreach($errors->all() as $error)
+    <script>
+       Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+        });
+    </script>
+    @endforeach
+@endif
+
 
     <div class="container" id="container">
        
         <div class="form-container sign-up">
-            
+          
            
             
             <form action="{{route('register.post')}}"  method="POST" >
                 @csrf
                 <h1>Create Account</h1>
-                @if($errors->any())
-                <ul>
-                    <div class="error">
-                        @foreach ($errors->all() as $error)
-                        <li>
-                            {{$error}}
-                        </li>
-                        @endforeach
-                    </div>
-                </ul>
-                @endif
+               
                 <input type="text" placeholder=" FirstName" name="FirstName">
                 <input type="text" placeholder=" LastName" name="LastName">
                 <input type="text" placeholder=" Username" name="Username">
@@ -278,6 +284,7 @@ body{
                 @csrf
                 
                 <h1>Sign In</h1>
+           
                 <input type="email" placeholder="Email" name="email">
                 <input type="password" placeholder="Password" name="password">
                 
@@ -300,7 +307,10 @@ body{
             </div>
         </div>
     </div>
-        <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  
+      <script>
             const container = document.getElementById('container');
       const registerBtn = document.getElementById('register');
       const loginBtn = document.getElementById('login');
@@ -313,6 +323,7 @@ body{
           container.classList.remove("active");
       });
           </script>
+
       </body>
       
       </html>

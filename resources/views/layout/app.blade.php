@@ -180,6 +180,22 @@ body {
   cursor: pointer;
 }
 
+.user img{
+  position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
 .search {
   position: relative;
   width: 400px;
@@ -407,17 +423,15 @@ body {
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search ">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                <div class="user">
+                    <img src="/images/user.jpg">
+                   
                 </div>
 
                 
             </div>
 
-            <!-- ======================= Cards ================== -->
+           
         
             
            @yield('hello')

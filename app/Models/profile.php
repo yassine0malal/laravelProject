@@ -19,6 +19,7 @@ class profile extends Model
   ];
   public function formulair()
     {
-        return $this->hasOne(Formulair::class, 'profile_id');
+        return $this->hasMany(Formulair::class, 'profil_id','id');
     }
+
 }

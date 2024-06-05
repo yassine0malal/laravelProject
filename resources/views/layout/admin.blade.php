@@ -13,7 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 
-
 </head>
 <style>
     /* =========== Google Fonts ============ */
@@ -343,14 +342,15 @@ body {
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="{{route('homeAdmin')}}">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-    <li>
+              
+                    <li>
                     <a href="{{route('solde')}}">
                         <span class="icon">
                             <ion-icon name="business-outline"></ion-icon>
@@ -369,6 +369,13 @@ body {
                         <span class="title">Demmande</span>
                     </a>
                 </li>
+                <li>
+                  <a href="{{route('arrchive')}}">
+                      <span class="icon">
+                        <ion-icon name="archive-outline"></ion-icon>                      </span>
+                      <span class="title">Arrchive</span>
+                  </a>
+              </li>
                
               <li>
                 <a href="{{route('companysolde')}}">
@@ -381,7 +388,17 @@ body {
 
             
 
-               
+            <li>
+              <a href="{{route('user')}}">
+                  <span class="icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+
+                  </span>
+
+                  
+                  <span class="title">User</span>
+              </a>
+          </li>
                    
 
                 
@@ -405,12 +422,7 @@ body {
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search ">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
-                </div>
+               
 
                 
             </div>
