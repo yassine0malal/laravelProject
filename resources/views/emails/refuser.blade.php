@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commande Refusée</title>
+    <title>Demande Refusée</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -50,13 +50,13 @@
     <div class="email-container">
 
         <div class="content">
-            <h1>Commande Refusée</h1>
-            <p>Bonjour {{ $user->name }},</p>
-            <p>Nous vous informons que votre commande numéro a été refusée.</p>
-            <p>Nous vous prions de bien vouloir contacter notre service clientèle pour plus d'informations.</p>
+            <h1>Demande Refusée</h1>
+            <p>Bonjour {{ $user->username }},</p>
+            <p>Nous vous informons que votre demande a été refusée.</p>
+            <p>Nous vous prions de bien vouloir contacter notre service  pour plus d'informations.</p>
             <p>Merci de votre compréhension.</p>
             <p>Cordialement,</p>
-            <p><strong>Marsa Maroc</strong></p>
+            <p><strong>Madin Holding</strong></p>
         </div>
 
     </div>
